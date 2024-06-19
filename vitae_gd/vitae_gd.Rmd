@@ -1,0 +1,106 @@
+---
+name: George
+surname: Dewey
+position: "Postdoctoral Research Associate"
+address: "MIGHTE @ Network Science Institute, Northeastern University, Boston, MA, 02115"
+email: "g.dewey@northeastern.edu"
+github: gd32
+linkedin: gdw32
+date: "`r format(Sys.time(), '%B %Y')`"
+output:
+  vitae::awesomecv:
+    page_total: TRUE
+    keep_tex: TRUE
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+pkgs = c('vitae', 'here', 'tidyverse', 'scholar', 'kableExtra', 'glue')
+xfun::pkg_attach2(pkgs)
+```
+
+# Research Interests
+
+ * Infectious Disease Epidemiology
+ * Social Network Analysis
+ * Big Data Techniques for Public Health
+
+# Education
+
+```{r education}
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Where, ~ Why,
+  "Doctor of Philosophy, Epidemiology", "2024", "University of California, Los Angeles", "Los Angeles, CA", "Dissertation - Harnessing Network Data to Address Scientific Challenges",
+  "Master of Public Health, Epidemiology", "2017", "University of California, Los Angeles", "Los Angeles, CA", NA,
+  "Bachelor of Arts, Biological Sciences", "2013", "University of Chicago", "Chicago, IL", NA
+) %>% 
+  detailed_entries(Degree, Year, Institution, Where, Why)
+
+```
+
+# Funding and Awards
+
+```{r funding}
+tribble(
+    ~ award, ~ value, ~ detail, ~ year,
+    "UCLA Department of Epidemiology HEALRISE Scholarship", "Primary Investigator: $20,000", "Title: 'Predicting Infectious Disease Outbreaks Using Early Warning Signals to Mitigate Racial and Ethnic Disparities", 2022,
+    "UCLA Fielding School of Public Health High Impact Data Initiative", "Co-Investigator: $14,000", "Title: Simulations, Experiments, and Big Data Analytics to Model Human Behavior", 2021,
+    "UCLA Department of Epidemiology Graduate Fellowship", NA, NA, 2019,
+    "Los Angeles County Department of Public Health SAS Users Group Award", NA, NA, 2019, 
+    "Los Angeles County Department of Public Health SAS Users Individual Award", NA, NA, 2018,
+    "UCLA Department of Epidemiology Dean's Leadership Grant", NA, NA, 2015,
+) %>% detailed_entries(detail, value, award, year)
+
+```
+
+# Experience
+
+```{r employment, results = 'asis'}
+tribble(
+    ~title, ~unit, ~startMonth, ~startYear, ~endMonth, ~endYear, ~where, ~detail,
+    "Postdoctoral Research Associate", "Machine Intelligence Group for the Betterment of Health and the Environment", "June", 2024, "Present", NA, "Boston, MA", "Develop forecasting and early warning systems for infectious disease outbreaks (focusing on the United States).",
+    "Graduate Student Researcher", "Nishi Lab, UCLA Fielding School of Public Health", "September", 2019, "May", 2024, "Los Angeles, CA", 
+    "Apply techniques from network science, epidemiology, and behavioral science to address problems relevant to public health. \\begin{itemize}
+        \\item Online network experiments using decision times to explore the relationship between cooperative and punishment decisions.
+        \\item Network simulations for preventive behaviors (COVID-19 non-pharmaceutical interventions, lung cancer screening).
+        \\item Evaluating ChatGPTs role as a research assistant using citation networks.
+        \\item 2+ peer-reviewed publications.
+    \\end{itemize}",
+    "Research and Evaluation Intern", "Los Angeles County Department of Public Health, Division of Chronic Disease and Injury Prevention", "June", 2016, "July", 2017, "Los Angeles, CA", 
+    "Evaluate benefits of nutritional programs throughout Los Angeles County using survey and sales data.
+    \\begin{itemize}
+        \\item 2 peer-reviewed publications.
+    \\end{itemize}",
+) %>%
+  detailed_entries(
+    with = title,
+    what = unit,
+    why = detail,
+    when = glue::glue("{startMonth} {startYear} - {endMonth} {endYear}",.na = ""),
+    where = where, .protect = F
+  )
+  
+```
+
+# Publications
+
+```{r}
+bibliography_entries('/Users/gdewey/Documents/Projects/rmarkdown_cv/bibliography.bib')
+```
+
+# Technical Skills
+
+```{r techtable, results='markup'}
+tribble(
+   ~`Coding Languages`, ~Software, ~`Markup Languages`,
+  "R, Python, SQL, Bash",
+  "Git, Linux (Ubuntu, Debian), Google Cloud Platform, Stata, SAS, MacOS/Windows",
+  "Markdown, Quarto"
+) %>%
+  kable(booktabs = T, align = 'c', escape = F, format = "latex") %>%
+  kable_styling(full_width = F, font_size = 9,latex_options = "hold_position") %>% 
+  row_spec(0, bold = T, color = "#414141") %>% 
+  row_spec(1, bold = F, color = "#7f7f7f") %>% 
+  column_spec(column = 1:3, width = '4.75cm')
+```
+
