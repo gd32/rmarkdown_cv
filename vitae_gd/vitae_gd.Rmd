@@ -43,7 +43,7 @@ tribble(
 ```{r funding}
 tribble(
     ~ award, ~ value, ~ detail, ~ year,
-    "UCLA Department of Epidemiology HEALRISE Scholarship", "Primary Investigator: $20,000", "Title: 'Predicting Infectious Disease Outbreaks Using Early Warning Signals to Mitigate Racial and Ethnic Disparities", 2022,
+    "UCLA Department of Epidemiology HEALRISE Scholarship", "Primary Investigator: $20,000", "Title: Predicting Infectious Disease Outbreaks Using Early Warning Signals to Mitigate Racial and Ethnic Disparities", 2022,
     "UCLA Fielding School of Public Health High Impact Data Initiative", "Co-Investigator: $14,000", "Title: Simulations, Experiments, and Big Data Analytics to Model Human Behavior", 2021,
     "UCLA Department of Epidemiology Graduate Fellowship", NA, NA, 2019,
     "Los Angeles County Department of Public Health SAS Users Group Award", NA, NA, 2019, 
