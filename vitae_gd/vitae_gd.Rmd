@@ -58,7 +58,11 @@ tribble(
 ```{r employment, results = 'asis'}
 tribble(
     ~title, ~unit, ~startMonth, ~startYear, ~endMonth, ~endYear, ~where, ~detail,
-    "Postdoctoral Research Associate", "Machine Intelligence Group for the Betterment of Health and the Environment", "June", 2024, "Present", NA, "Boston, MA", "Develop forecasting and early warning systems for infectious disease outbreaks (focusing on the United States).",
+    "Postdoctoral Research Associate", "Machine Intelligence Group for the Betterment of Health and the Environment", "June", 2024, "Present", NA, "Boston, MA", "Use computational techniques and novel data sources to explore problems in digital epidemiology.
+    \\begin{itemize}
+    \\item Develop forecasting and early warning systems for respiratory diseases in the United States.
+    \\item Evaluate trends in human behavior and mobility during infectious disease outbreaks.
+    \\end{itemize}",
     "Graduate Student Researcher", "Nishi Lab, UCLA Fielding School of Public Health", "September", 2019, "May", 2024, "Los Angeles, CA", 
     "Apply techniques from network science, epidemiology, and behavioral science to address problems relevant to public health. \\begin{itemize}
         \\item Online network experiments using decision times to explore the relationship between cooperative and punishment decisions.
