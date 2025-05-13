@@ -2,7 +2,7 @@
 name: George
 surname: Dewey
 position: "Postdoctoral Research Associate"
-address: "MIGHTE @ Network Science Institute, Northeastern University, Boston, MA, 02115"
+address: "177 Huntington Ave, Room 1025, Boston, MA, 02115"
 email: "g.dewey@northeastern.edu"
 github: gd32
 linkedin: gdw32
